@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default async function DashboardLayout({ children }) {
+export default async function DashboardLayout() {
 
-    const { isAuthenticated } = getKindeServerSession();
+    const { isAuthenticated } = await getKindeServerSession();
     const authenticated = await isAuthenticated();
     console.log(authenticated);
 
