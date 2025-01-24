@@ -6,7 +6,7 @@ export default async function DashboardLayout({ children }) {
   const authenticated = await isAuthenticated();
 
   if (!authenticated) {
-    redirect('/api/auth/login');
+    redirect('api/auth/login');
   }
 
   return <>{children}</>;

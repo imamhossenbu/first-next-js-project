@@ -6,6 +6,7 @@ import NavLink from "./NavLink";
 const Navbar = async () => {
     const { getUser, isAuthenticated } = getKindeServerSession();
     const user = await getUser();
+    console.log(user);
     const authenticated = await isAuthenticated();
 
     return (
