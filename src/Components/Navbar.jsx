@@ -20,7 +20,7 @@ const Navbar = async () => {
                         <div>
                             <ul className="font-semibold flex gap-6">
                                 <li><NavLink href="/">Home</NavLink></li>
-                                <li><NavLink href="/dashboard/profile">Profile</NavLink></li>
+                                <li><NavLink href="/profile">Profile</NavLink></li>
                                 {authenticated ? (
                                     <li><NavLink href="/api/auth/logout">Log out</NavLink></li>
                                 ) : (
