@@ -1,6 +1,6 @@
 // import NavLink from "../components/NavLink";
 
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { getKindeServerSession, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
 import NavLink from "./NavLink";
 
 const Navbar = async () => {
@@ -22,7 +22,7 @@ const Navbar = async () => {
                                 <li><NavLink href="/">Home</NavLink></li>
                                 <li><NavLink href="/profile">Profile</NavLink></li>
                                 {authenticated ? (
-                                    <li><NavLink href="/api/auth/logout">Log out</NavLink></li>
+                                    <li><LogoutLink>Log Out</LogoutLink></li>
                                 ) : (
                                     <li><NavLink href="/api/auth/login">Login</NavLink></li>
                                 )}
