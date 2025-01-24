@@ -22,9 +22,13 @@ const Navbar = async () => {
                                 <li><NavLink href="/">Home</NavLink></li>
                                 <li><NavLink href="/profile">Profile</NavLink></li>
                                 {authenticated ? (
-                                    <li><NavLink href="/api/auth/logout">Log out</NavLink></li>
+                                    <a href="/api/auth/logout" className="bg-red-500 text-white px-4 py-2 rounded">
+                                        Logout
+                                    </a>
                                 ) : (
-                                    <li><NavLink href="/api/auth/login">Login</NavLink></li>
+                                    <button onClick={() => login()} className="bg-green-500 text-white px-4 py-2 rounded">
+                                        Login
+                                    </button>
                                 )}
                             </ul>
                         </div>
