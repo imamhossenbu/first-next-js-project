@@ -24,7 +24,7 @@ export default async function DashboardLayout() {
 
                     <div className="flex justify-center gap-4">
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/imam-hossen-ub/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition"
@@ -32,7 +32,7 @@ export default async function DashboardLayout() {
                             LinkedIn
                         </a>
                         <a
-                            href="https://github.com"
+                            href="https://github.com/imamhossenbu"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-gray-900 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-800 transition"
