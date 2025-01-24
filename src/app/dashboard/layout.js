@@ -1,17 +1,38 @@
-import { redirect } from "next/navigation";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+"use client";
 
-export default async function DashboardLayout({ children }) {
-  const { isAuthenticated } = getKindeServerSession();
-  const authenticated = await isAuthenticated();
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
-  if (!authenticated) {
-    redirect('/api/auth/login');
-  }
+const Layout = ({ children }) => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
-  if(authenticated){
-    redirect('/dashboard/profile')
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('/api/auth/check');
+        const data = await response.json();
+
+        if (!data.authenticated) {
+          router.push('/api/auth/login');
+        } else {
+          router.push('/dashboard/profile');
+        }
+      } catch (error) {
+        console.error("Error checking authentication:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, [router]);
+
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
   return <>{children}</>;
-}
+};
+
+export default Layout;
