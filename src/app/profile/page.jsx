@@ -3,7 +3,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function DashboardLayout() {
 
-    const { isAuthenticated } = await getKindeServerSession();
+    const { isAuthenticated } = getKindeServerSession();
     const authenticated = await isAuthenticated();
     console.log(authenticated);
 
